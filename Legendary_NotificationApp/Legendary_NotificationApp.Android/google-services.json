@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "375526486125",
+    "firebase_url": "https://legendaryintranet.firebaseio.com",
+    "project_id": "legendaryintranet",
+    "storage_bucket": "legendaryintranet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375526486125:android:08de280c15305c64774f64",
+        "android_client_info": {
+          "package_name": "com.legendary.pushnotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375526486125-s8s47sc78js0108iq3r6u5i6tp59brsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDncWn0jPl5-_rlDeJO1nwjCIKM26yCUeA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375526486125-s8s47sc78js0108iq3r6u5i6tp59brsk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
