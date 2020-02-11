@@ -14,29 +14,22 @@ namespace Legendary_NotificationApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private const string defaultUrl = "https://legendary-intranet.legendary.com";
         public MainPage()
         {
             InitializeComponent();
         }
 
-        public void AddMessage(string message, string url)
+        public void OpenUrlFromNotificationMessage(string url)
         {
-            Device.BeginInvokeOnMainThread(() =>
+            Device.BeginInvokeOnMainThread(async () =>
             {
-                if (messageDisplay.Children.OfType<Label>().Where(c => c.Text == message).Any())
-                {
-                    // Do nothing, an identical message already exists
+                bool canOpen = await Launcher.CanOpenAsync(new Uri(url));
+                if(canOpen){
+                    await Launcher.OpenAsync(new Uri(url));
                 }
-                else
-                {
-                    Label label = new Label()
-                    {
-                        Text = message,
-                        HorizontalOptions = LayoutOptions.CenterAndExpand,
-                        VerticalOptions = LayoutOptions.Start
-                    };
-                    messageDisplay.Children.Add(label);
-
+                else{
+                    await Launcher.OpenAsync(new Uri(defaultUrl));
                 }
             });
         }

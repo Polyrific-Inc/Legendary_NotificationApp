@@ -13,6 +13,8 @@ namespace Legendary_NotificationApp.Droid
     [Activity(Label = "Intranet Notification", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, LaunchMode = LaunchMode.SingleTop)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        public static MainActivity Instance;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -22,14 +24,36 @@ namespace Legendary_NotificationApp.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            Instance = this;
+
+            //Background or killed mode
+            if (Instance.Intent.Extras != null)
+            {
+                foreach (var key in Instance.Intent.Extras.KeySet())
+                {
+                    var url = Instance.Intent.GetStringExtra("url");
+                    if (key == "url")
+                    {
+                        if (url?.Length > 0)
+                        {
+                            LoadApplication(new App(url));
+                        }
+                    }
+                }
+
+            }
+            else
+            {
+                LoadApplication(new App(string.Empty));
+            }
 
             if (IsPlayServiceAvailable() == false)
             {
                 throw new Exception("This device does not have Google Play Services and cannot receive push notifications.");
             }
-
             CreateNotificationChannel();
+
         }
 
         protected override void OnNewIntent(Intent intent)
@@ -37,11 +61,7 @@ namespace Legendary_NotificationApp.Droid
             if (intent.Extras != null)
             {
                 var url = intent.GetStringExtra("url");
-                var message = intent.GetStringExtra("message");
-
-                (App.Current.MainPage as MainPage)?.AddMessage(message, url);
-
-                Launcher.OpenAsync(new Uri(url));
+                (App.Current.MainPage as MainPage)?.OpenUrlFromNotificationMessage(url);
             }
 
             base.OnNewIntent(intent);

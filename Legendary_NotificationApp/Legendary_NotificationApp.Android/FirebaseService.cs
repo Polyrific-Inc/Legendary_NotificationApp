@@ -19,6 +19,7 @@ namespace Legendary_NotificationApp.Droid
             base.OnMessageReceived(message);
             string messageBody = string.Empty;
             string url = string.Empty;
+            string title = string.Empty;
 
             if (message.GetNotification() != null)
             {
@@ -30,14 +31,12 @@ namespace Legendary_NotificationApp.Droid
             {
                 messageBody = message.Data["message"];
                 url = message.Data["url"];
-                //messageBody = message.Data.Values.First();
+                title = message.Data["title"];
             }
 
             // convert the incoming message to a local notification
-            SendLocalNotification(messageBody,url);
+            SendLocalNotification(messageBody, url, title);
 
-            // send the incoming message directly to the MainPage
-            SendMessageToMainPage(messageBody,url);
         }
 
         public override void OnNewToken(string token)
@@ -47,17 +46,19 @@ namespace Legendary_NotificationApp.Droid
             SendRegistrationToServer(token);
         }
 
-        void SendLocalNotification(string body, string url)
+        void SendLocalNotification(string body, string url, string title)
         {
             var intent = new Intent(this, typeof(MainActivity));
             intent.AddFlags(ActivityFlags.ClearTop);
+
             intent.PutExtra("url", url);
             intent.PutExtra("message", body);
+            intent.PutExtra("title", body);
 
             var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
 
             var notificationBuilder = new NotificationCompat.Builder(this, AzureNotificationHub.NotificationChannelName)
-                .SetContentTitle("Legendary Intranet Message")
+                .SetContentTitle(title)
                 .SetSmallIcon(Resource.Drawable.icon)
                 .SetContentText(body)
                 .SetAutoCancel(true)
@@ -73,10 +74,6 @@ namespace Legendary_NotificationApp.Droid
             notificationManager.Notify(0, notificationBuilder.Build());
         }
 
-        void SendMessageToMainPage(string body, string url)
-        {
-            (App.Current.MainPage as MainPage)?.AddMessage(body, url);
-        }
 
         void SendRegistrationToServer(string token)
         {
