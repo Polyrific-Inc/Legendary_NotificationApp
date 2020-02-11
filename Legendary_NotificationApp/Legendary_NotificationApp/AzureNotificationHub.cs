@@ -42,12 +42,12 @@ namespace Legendary_NotificationApp
         /// This is the template json that Android devices will use. Templates
         /// are defined by the device and can include multiple parameters.
         /// </summary>
-        public static string FCMTemplateBody { get; set; } = "{\"data\":{\"message\":\"$(messageParam)\"}}";
+        public static string FCMTemplateBody { get; set; } = "{\"data\":{\"message\":\"$(messageParam)\",\"url\":\"$(urlParam)\",\"title\":\"$(titleParam)\"}}";
 
         /// <summary>
         /// This is the template json that Apple devices will use. Templates
         /// are defined by the device and can include multiple parameters.
         /// </summary>
-        public static string APNTemplateBody { get; set; } = "{\"aps\":{\"alert\":\"$(messageParam)\"}}";
+        public static string APNTemplateBody { get; set; } = "{\"aps\":{\"alert\":\"$(messageParam)\",\"url\":\"$(urlParam)\",\"title\":\"$(titleParam)\"}}";
     }
 }
