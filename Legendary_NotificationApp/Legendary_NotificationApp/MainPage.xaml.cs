@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Legendary_NotificationApp
@@ -18,7 +19,7 @@ namespace Legendary_NotificationApp
             InitializeComponent();
         }
 
-        public void AddMessage(string message)
+        public void AddMessage(string message, string url)
         {
             Device.BeginInvokeOnMainThread(() =>
             {
@@ -35,6 +36,7 @@ namespace Legendary_NotificationApp
                         VerticalOptions = LayoutOptions.Start
                     };
                     messageDisplay.Children.Add(label);
+
                 }
             });
         }

@@ -116,15 +116,20 @@ namespace Legendary_NotificationApp.iOS
                 // into a NSDictionary so more complex payloads may require more processing
                 NSDictionary aps = options.ObjectForKey(new NSString("aps")) as NSDictionary;
                 string payload = string.Empty;
+                string url = string.Empty;
+
                 NSString payloadKey = new NSString("alert");
+                NSString urlKey = new NSString("url");
+
                 if (aps.ContainsKey(payloadKey))
                 {
                     payload = aps[payloadKey].ToString();
+                    url = aps[urlKey].ToString();
                 }
 
                 if (!string.IsNullOrWhiteSpace(payload))
                 {
-                    (App.Current.MainPage as MainPage)?.AddMessage(payload);
+                    (App.Current.MainPage as MainPage)?.AddMessage(payload, url);
                 }
 
             }

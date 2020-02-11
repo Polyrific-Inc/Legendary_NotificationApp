@@ -6,18 +6,12 @@
              mc:Ignorable="d"
              x:Class="Legendary_NotificationApp.MainPage">
 
-    <StackLayout>
-        <Label Text="Welcome to Legendary Intranet Notification App!"
-               Margin="0,35,0,0"
-               FontAttributes="Bold"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start" />
-        <Label Text="Messages Received:"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start" />
+    <StackLayout BackgroundColor="Black">
+        <Image x:Name="legendaryLogo" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="LDN_Logo.png" />
+
         <StackLayout x:Name="messageDisplay"
                      HorizontalOptions="Center"
-                     VerticalOptions="Start">
+                     VerticalOptions="Center">
         </StackLayout>
     </StackLayout>
 

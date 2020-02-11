@@ -18,6 +18,7 @@ namespace Legendary_NotificationApp.Droid
         {
             base.OnMessageReceived(message);
             string messageBody = string.Empty;
+            string url = string.Empty;
 
             if (message.GetNotification() != null)
             {
@@ -27,14 +28,16 @@ namespace Legendary_NotificationApp.Droid
             // NOTE: test messages sent via the Azure portal will be received here
             else
             {
-                messageBody = message.Data.Values.First();
+                messageBody = message.Data["message"];
+                url = message.Data["url"];
+                //messageBody = message.Data.Values.First();
             }
 
             // convert the incoming message to a local notification
-            SendLocalNotification(messageBody);
+            SendLocalNotification(messageBody,url);
 
             // send the incoming message directly to the MainPage
-            SendMessageToMainPage(messageBody);
+            SendMessageToMainPage(messageBody,url);
         }
 
         public override void OnNewToken(string token)
@@ -44,16 +47,18 @@ namespace Legendary_NotificationApp.Droid
             SendRegistrationToServer(token);
         }
 
-        void SendLocalNotification(string body)
+        void SendLocalNotification(string body, string url)
         {
             var intent = new Intent(this, typeof(MainActivity));
             intent.AddFlags(ActivityFlags.ClearTop);
+            intent.PutExtra("url", url);
             intent.PutExtra("message", body);
+
             var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
 
             var notificationBuilder = new NotificationCompat.Builder(this, AzureNotificationHub.NotificationChannelName)
                 .SetContentTitle("Legendary Intranet Message")
-                .SetSmallIcon(Resource.Drawable.ic_launcher)
+                .SetSmallIcon(Resource.Drawable.icon)
                 .SetContentText(body)
                 .SetAutoCancel(true)
                 .SetShowWhen(false)
@@ -68,9 +73,9 @@ namespace Legendary_NotificationApp.Droid
             notificationManager.Notify(0, notificationBuilder.Build());
         }
 
-        void SendMessageToMainPage(string body)
+        void SendMessageToMainPage(string body, string url)
         {
-            (App.Current.MainPage as MainPage)?.AddMessage(body);
+            (App.Current.MainPage as MainPage)?.AddMessage(body, url);
         }
 
         void SendRegistrationToServer(string token)

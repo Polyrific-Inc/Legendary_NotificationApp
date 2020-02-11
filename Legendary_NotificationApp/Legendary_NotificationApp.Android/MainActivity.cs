@@ -6,10 +6,11 @@ using Android.OS;
 using Android.Runtime;
 using Android.Util;
 using System;
+using Xamarin.Essentials;
 
 namespace Legendary_NotificationApp.Droid
 {
-    [Activity(Label = "Intranet Notification", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Intranet Notification", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, LaunchMode = LaunchMode.SingleTop)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -35,8 +36,12 @@ namespace Legendary_NotificationApp.Droid
         {
             if (intent.Extras != null)
             {
+                var url = intent.GetStringExtra("url");
                 var message = intent.GetStringExtra("message");
-                (App.Current.MainPage as MainPage)?.AddMessage(message);
+
+                (App.Current.MainPage as MainPage)?.AddMessage(message, url);
+
+                Launcher.OpenAsync(new Uri(url));
             }
 
             base.OnNewIntent(intent);
