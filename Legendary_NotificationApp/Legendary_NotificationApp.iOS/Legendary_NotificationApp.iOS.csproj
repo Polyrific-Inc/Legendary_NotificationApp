@@ -74,29 +74,75 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo.png" />
-    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo-1.png" />
-    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo-2.png" />
-    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo-3.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary60.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary_58.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary87.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary120-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary180.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\LEGENDARY_20x20.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary40-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary_29.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary58.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary40-2.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary152.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary167.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\legendary-logo-1024-no-tp.png" />
+    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary_58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary120-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\LEGENDARY_20x20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary40-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary_29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary40-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\legendary-logo-1024-no-tp.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
