@@ -27,7 +27,7 @@ namespace Legendary_NotificationApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new App(string.Empty));
 
             base.FinishedLaunching(app, options);
 
@@ -129,7 +129,7 @@ namespace Legendary_NotificationApp.iOS
 
                 if (!string.IsNullOrWhiteSpace(payload))
                 {
-                    (App.Current.MainPage as MainPage)?.AddMessage(payload, url);
+                    (App.Current.MainPage as MainPage)?.OpenUrlFromNotificationMessage(url);
                 }
 
             }
