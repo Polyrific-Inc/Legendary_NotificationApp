@@ -48,6 +48,7 @@ namespace Legendary_NotificationApp
         /// This is the template json that Apple devices will use. Templates
         /// are defined by the device and can include multiple parameters.
         /// </summary>
-        public static string APNTemplateBody { get; set; } = "{\"aps\":{\"alert\":\"$(messageParam)\",\"url\":\"$(urlParam)\",\"title\":\"$(titleParam)\"}}";
+        public static string APNTemplateBody { get; set; } = "\"aps\":{\"alert\":{\"title\":\"$(titleParam)\",\"body\":\"$(bodyParam)\"},\"url\":\"$(urlParam)\"}}"
+;
     }
 }

@@ -45,11 +45,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>Apple Development: Matthew Cashatt (D88G3TQHC5)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
     <MtouchInterpreter>-all</MtouchInterpreter>
+    <CodesignProvision>PushNotification Dev Profile</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -73,45 +74,29 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo.png" />
+    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo-1.png" />
+    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo-2.png" />
+    <ImageAsset Include="Assets.xcassets\LDN_Logo.imageset\LDN_Logo-3.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary_58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary120-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\LEGENDARY_20x20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary40-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary_29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary40-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Legendary167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\legendary-logo-1024-no-tp.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -131,8 +116,11 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Legendary_NotificationApp\Legendary_NotificationApp.csproj">
-      <Project>{260981DC-21D6-4351-B48D-DE7598E37400}</Project>
+      <Project>{BCE97190-7468-4197-8F1C-71F53F26FD13}</Project>
       <Name>Legendary_NotificationApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\LDN_Logo.imageset\" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using ObjCRuntime;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -23,18 +24,26 @@ namespace Legendary_NotificationApp.iOS
         //
 
         private SBNotificationHub Hub { get; set; }
+        private string url = string.Empty;
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App(string.Empty));
+
+
+            var keyName = new NSString("UIApplicationLaunchOptionsRemoteNotificationKey");
+            if(options != null && options.Keys != null && options.Keys.Length != 0 && options.ContainsKey(keyName))
+            {
+                NSDictionary pushOptions = options.ObjectForKey(keyName) as NSDictionary;
+                ProcessNotification(options);
+            }
+            RegisterForRemoteNotifications();
+            LoadApplication(new App(url));
 
             base.FinishedLaunching(app, options);
-
-            RegisterForRemoteNotifications();
-
             return true;
         }
+
 
         void RegisterForRemoteNotifications()
         {
@@ -88,7 +97,7 @@ namespace Legendary_NotificationApp.iOS
                     }
                 });
 
-                var templateExpiration = DateTime.Now.AddDays(120).ToString(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+                var templateExpiration = DateTime.Now.AddDays(300).ToString(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
                 Hub.RegisterTemplate(deviceToken, "defaultTemplate", AzureNotificationHub.APNTemplateBody, templateExpiration, tags, (errorCallback) =>
                 {
                     if (errorCallback != null)
@@ -104,10 +113,16 @@ namespace Legendary_NotificationApp.iOS
 
         public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
         {
-            ProcessNotification(userInfo, false);
+            ProcessNotification(userInfo);
         }
 
-        void ProcessNotification(NSDictionary options, bool fromFinishedLaunching)
+        public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
+        {
+            ProcessNotification(userInfo);
+            completionHandler(UIBackgroundFetchResult.NewData);
+        }
+
+        void ProcessNotification(NSDictionary options)
         {
             // make sure we have a payload
             if (options != null && options.ContainsKey(new NSString("aps")))
@@ -115,21 +130,22 @@ namespace Legendary_NotificationApp.iOS
                 // get the APS dictionary and extract message payload. Message JSON will be converted
                 // into a NSDictionary so more complex payloads may require more processing
                 NSDictionary aps = options.ObjectForKey(new NSString("aps")) as NSDictionary;
-                string payload = string.Empty;
-                string url = string.Empty;
+                string _payload = string.Empty;
+                string _url = string.Empty;
 
                 NSString payloadKey = new NSString("alert");
                 NSString urlKey = new NSString("url");
 
-                if (aps.ContainsKey(payloadKey))
+
+                if (aps.ContainsKey(urlKey))
                 {
-                    payload = aps[payloadKey].ToString();
-                    url = aps[urlKey].ToString();
+                    _url = aps[urlKey].ToString();
                 }
 
-                if (!string.IsNullOrWhiteSpace(payload))
+                if (!string.IsNullOrWhiteSpace(_url))
                 {
-                    (App.Current.MainPage as MainPage)?.OpenUrlFromNotificationMessage(url);
+                    url = _url;
+                    (App.Current.MainPage as MainPage)?.OpenUrlFromNotificationMessage(_url);
                 }
 
             }

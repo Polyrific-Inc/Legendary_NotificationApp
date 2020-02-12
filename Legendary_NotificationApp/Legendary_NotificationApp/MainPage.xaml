@@ -7,12 +7,13 @@
              x:Class="Legendary_NotificationApp.MainPage">
 
     <StackLayout BackgroundColor="Black">
-        <Image x:Name="legendaryLogo" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="LDN_Logo.png" />
-
-        <StackLayout x:Name="messageDisplay"
-                     HorizontalOptions="Center"
-                     VerticalOptions="Center">
-        </StackLayout>
+        <Image x:Name="legendaryLogo" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <OnPlatform.iOS><FileImageSource File="LDN_Logo"/></OnPlatform.iOS>
+                    <OnPlatform.Android><FileImageSource File="LDN_Logo"/></OnPlatform.Android>
+                </OnPlatform>
+            </Image.Source>
+        </Image>
     </StackLayout>
-
 </ContentPage>
