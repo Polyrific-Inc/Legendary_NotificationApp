@@ -14,7 +14,7 @@ namespace Legendary_NotificationApp
         /// <summary>
         /// This is the name of your Azure Notification Hub, found in your Azure portal.
         /// </summary>
-        public static string NotificationHubName { get; set; } = "< Insert your Azure Notification Hub name >";
+        public static string NotificationHubName { get; set; } = "legendary-intranet-hub";
 
         /// <summary>
         /// This is the "DefaultListenSharedAccessSignature" connection string, which is
@@ -23,7 +23,7 @@ namespace Legendary_NotificationApp
         /// You should always use the ListenShared connection string. Do not use the
         /// FullShared connection string in a client application.
         /// </summary>
-        public static string ListenConnectionString { get; set; } = "< Insert your DefaultListenSharedAccessSignature >";
+        public static string ListenConnectionString { get; set; } = "Endpoint=sb://legendary-intranet.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=7nYMVzH/bJPUoAZGCCcNJrf8csKvaqWh+pyBu3y4nAY=";
 
         /// <summary>
         /// Tag used in log messages to easily filter the device log
@@ -38,17 +38,5 @@ namespace Legendary_NotificationApp
         /// </summary>
         public static string[] SubscriptionTags { get; set; } = { "default" };
 
-        /// <summary>
-        /// This is the template json that Android devices will use. Templates
-        /// are defined by the device and can include multiple parameters.
-        /// </summary>
-        public static string FCMTemplateBody { get; set; } = "{\"data\":{\"message\":\"$(messageParam)\",\"url\":\"$(urlParam)\",\"title\":\"$(titleParam)\"}}";
-
-        /// <summary>
-        /// This is the template json that Apple devices will use. Templates
-        /// are defined by the device and can include multiple parameters.
-        /// </summary>
-        public static string APNTemplateBody { get; set; } = "\"aps\":{\"alert\":{\"title\":\"$(titleParam)\",\"body\":\"$(bodyParam)\"},\"url\":\"$(urlParam)\"}}"
-;
     }
 }

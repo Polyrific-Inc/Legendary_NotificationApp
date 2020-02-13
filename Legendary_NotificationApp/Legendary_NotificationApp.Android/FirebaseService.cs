@@ -84,9 +84,6 @@ namespace Legendary_NotificationApp.Droid
                 // register device with Azure Notification Hub using the token from FCM
                 Registration registration = hub.Register(token, AzureNotificationHub.SubscriptionTags);
 
-                // subscribe to the SubscriptionTags list with a simple template.
-                string pnsHandle = registration.PNSHandle;
-                TemplateRegistration templateReg = hub.RegisterTemplate(pnsHandle, "defaultTemplate", AzureNotificationHub.FCMTemplateBody, AzureNotificationHub.SubscriptionTags);
             }
             catch (Exception e)
             {

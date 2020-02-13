@@ -96,18 +96,6 @@ namespace Legendary_NotificationApp.iOS
                         Debug.WriteLine($"RegisterNativeAsync error: {errorCallback}");
                     }
                 });
-
-                var templateExpiration = DateTime.Now.AddDays(300).ToString(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
-                Hub.RegisterTemplate(deviceToken, "defaultTemplate", AzureNotificationHub.APNTemplateBody, templateExpiration, tags, (errorCallback) =>
-                {
-                    if (errorCallback != null)
-                    {
-                        if (errorCallback != null)
-                        {
-                            Debug.WriteLine($"RegisterTemplateAsync error: {errorCallback}");
-                        }
-                    }
-                });
             });
         }
 
