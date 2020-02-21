@@ -5,7 +5,6 @@
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
-		<integer>2</integer>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -23,7 +22,7 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>Legendary_NotificationApp</string>
+	<string>Legendary Intranet Notification</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.polyrific.push-notification</string>
 	<key>CFBundleVersion</key>
@@ -34,5 +33,9 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleName</key>
 	<string>Legendary Intranet Notification</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>
