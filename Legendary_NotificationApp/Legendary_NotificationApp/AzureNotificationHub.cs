@@ -23,7 +23,7 @@ namespace Legendary_NotificationApp
         /// You should always use the ListenShared connection string. Do not use the
         /// FullShared connection string in a client application.
         /// </summary>
-        public static string ListenConnectionString { get; set; } = "Endpoint=sb://legendary-intranet.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=7nYMVzH/bJPUoAZGCCcNJrf8csKvaqWh+pyBu3y4nAY=";
+        public static string ListenConnectionString { get; set; } = "Endpoint=sb://legend-notifications.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=TK3/nm8CBWH1U2b6V1cMrM5qIEtK7sYB7NJQNROVPYg=";
 
         /// <summary>
         /// Tag used in log messages to easily filter the device log
