@@ -14,7 +14,7 @@ namespace Legendary_NotificationApp
         /// <summary>
         /// This is the name of your Azure Notification Hub, found in your Azure portal.
         /// </summary>
-        public static string NotificationHubName { get; set; } = "legendary-intranet-hub";
+        public static string NotificationHubName { get; set; } = "legend-intranet-notification-hub";
 
         /// <summary>
         /// This is the "DefaultListenSharedAccessSignature" connection string, which is
