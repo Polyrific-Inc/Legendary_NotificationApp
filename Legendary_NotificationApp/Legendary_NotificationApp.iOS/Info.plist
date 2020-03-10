@@ -26,7 +26,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.polyrific.push-notification</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>XSAppIconAssets</key>
@@ -34,7 +34,7 @@
 	<key>CFBundleName</key>
 	<string>Legendary Intranet Notification</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 </dict>
